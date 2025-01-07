@@ -17,15 +17,25 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicou()" onmouseenter="entrar()">
+    <div id="area">
         Interaja...
     </div>
-
+    <!-- Ou coloca no HTML dentro da div por ex: onclick="clicou()" onmouseenter="entrar()" onmouseout="sair()". Ou coloca no script usando addEventListener() -->
     <script>
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicou)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
         function clicou(){
-            var a = document.getElementById('area')
-            a.style.background = 'navy'
             a.innerText = 'Clicou!'
+            a.style.background = 'navy'
+        }
+        function entrar(){
+            a.innerText = 'Entrou!'
+        }
+        function sair(){
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
         }
     </script>
 </body>
