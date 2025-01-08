@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>BR ou não?</h1>
+    <p>Em que país você nasceu?</p>
+    <input type="text" id="ipais">
+    <input type="button" value="Enviar" onclick="enviar()">
+    <p id="resp"></p>
+    <script>
+        var pais = document.getElementById('ipais')
+        var res = document.getElementById('resp')
+        function enviar(){
+            if (pais.value.trim().toLowerCase() == 'brasil') {
+                res.innerHTML = 'Você é Brasileiro'
+            } else {
+                res.innerHTML = 'Você não é Brasileiro'
+            }
+        }
+    </script>
+</body>
+</html>
