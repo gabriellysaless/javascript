@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DETRAN</title>
+    <style>
+        input#bot{
+            margin-top: 5px;
+        }
+        div#resp{
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Sistema de Multas</h1>
+    <p>Velocidade do automóvel:</p>
+    <input type="number" name="vel" id="ivel"> Km/h <br>
+    <input id="bot" type="button" value="Verificar" onclick="calc()">
+    <div id="resp">
+
+    </div>
+    <script>
+        function calc() {
+            var txtv = document.getElementById('ivel')
+            var res = document.getElementById('resp')
+            var nvel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade é de ${nvel}Km/h</p>`
+            if (nvel > 60) {
+                res.innerHTML += `<p>Você ultrapassou o limite de velocidade. MULTADO!</p>`
+                // += serve para concatenar, se for só "=" apaga as mensagens anteriores e deixa a última
+            }
+            res.innerHTML += `<p>Dirija sempre com segurança"</p>`
+        }
+    </script>
 </body>
 </html>
