@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <button onclick="clicou()">Antecessor e Sucessor</button>
+    <script>
+        function clicou(){
+            var num = Number(window.prompt('Digite um número interiro qualquer'))
+            var antes = num - 1
+            var depois = num + 1
+            window.alert(`Antes do número ${num}, temos o número ${antes}.\nDepois do número ${num}, temos o número ${depois}.`)
+        }
+    </script>
+</body>
+</html>
