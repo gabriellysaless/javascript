@@ -9,13 +9,14 @@ function verificar(){
         var sexo = document.getElementsByName('sex')
         var idade = ano - Number(nasc.value)
         var genero = ''
-        var img = document.createElement('img') // Para criar um novo elemento no documento
+        var img = document.createElement('img') // Para criar um novo elemento
         img.setAttribute('id', 'foto') // Para criar um novo atributo, primeiro o atributo depois o nome
+
         if (sexo[0].checked) {
             genero = 'homem'
             if (idade >= 0 && idade < 10) {
                 // Criança
-                img.setAttribute('src', 'img/bebem.png')
+                img.setAttribute('src', 'img/bebem.png') // Para selecionar qual a imagem vai ficar no elemento criado
             }
             else if (idade <= 20) {
                 // Jovem
@@ -32,6 +33,8 @@ function verificar(){
             resp.style.textAlign = 'center'
             resp.innerHTML = `Detectamos ${genero} com ${idade} anos.`
             resp.appendChild(img) // Acrescenta outro elemento a variável 
+            // Agora a imagem irá aparecer no var resp
+
         } else if (sexo[1].checked) {
             genero = 'mulher'
             if (idade >= 0 && idade < 10) {
@@ -53,6 +56,7 @@ function verificar(){
             resp.style.textAlign = 'center'
             resp.innerHTML = `Detectamos ${genero} com ${idade} anos.`
             resp.appendChild(img) // Acrescenta outro elemento a variável 
+            
         } else {
             window.alert('[Erro] Verifique os dados e tente novamente!')
         }
