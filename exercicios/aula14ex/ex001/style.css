@@ -38,7 +38,7 @@ section input {
     margin: 5px 0px 10px 0px;
 }
 
-section button{
+section input#but{
     padding: 3px;
     margin: 5px 0px 15px 0px;
 }
