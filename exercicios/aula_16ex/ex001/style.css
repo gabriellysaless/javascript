@@ -34,7 +34,7 @@ section{
 }
 
 section > div#numero{
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 section input#add{
@@ -49,6 +49,10 @@ section input#fim{
     display: block;
     padding: 3px;
     margin-top: 4px;
+}
+
+section > div#finish{
+    margin-top: 8px;
 }
 
 footer{

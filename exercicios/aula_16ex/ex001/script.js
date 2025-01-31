@@ -1,5 +1,6 @@
 let numb = document.getElementById('inum')
 let resp = document.getElementById('itxt')
+let end = document.getElementById('finish')
 let valores = []
 
 function adicionar(){
@@ -20,13 +21,28 @@ function adicionar(){
         resp.appendChild(texto)
         valores.push(n)
     }
+    end.innerHTML = '' // Limpa o resultado
+    numb.value = '' //Limpa o input
+    numb.focus() //Mantem o cursor no campo
+    // Melhora a experiência do usuário
 }
 
 function resultado(){
     if (resp.options.length === 0) { //Confere se o select está vazio
         window.alert('Nenhum valor foi adicionado')
     } else {
-        alert(valores)
+        let maior = Math.max(...valores) // Operador spread (...) para espalhar os valores do array e encontrar o maior número.
+        let menor = Math.min(...valores)
+
+        let result = document.createElement('p')
+            result.innerHTML = `
+            Ao todo temos ${valores.length} números cadastrados. <br>
+            O maior número registrado foi ${maior}. <br>
+            O menor número registrado foi ${menor}. <br>
+            `
+            // FALTA COLOCAR: soma de valores e média.
+
+            end.appendChild(result)
     }
 }
 
@@ -36,8 +52,6 @@ function resultado(){
     let hasEnabledOptions = Array.from(resp.options).some(opt => !opt.disabled)
     if (!hasEnabledOptions) { //Confere se o select está vazio
         window.alert('Nenhum valor foi adicionado')
-    } else {
-        alert(valores)
     }
 
 => Verificar se todas as opções são apenas espaços em branco
@@ -45,7 +59,5 @@ function resultado(){
     let isEmpty = Array.from(resp.options).every(opt => opt.text.trim() === "") // Converte as opções do select para um array e verifica se todas são vazias
     if (isEmpty) {
         window.alert('Nenhum valor foi adicionado')
-    } else {
-        alert(valores)
     }
 */
