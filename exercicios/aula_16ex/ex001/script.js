@@ -5,26 +5,17 @@ let valores = []
 
 function adicionar(){
     let n = Number(numb.value)
-    if (n < 1 || n > 100){
-        //Verifica de o número está dentro do estabelecido
-        window.alert('Por favor, digite um valor válido')
-    } else if (valores.includes(n)){
-        // Verifica se o número já está no array
-        window.alert('Valor já adicionado, por favor escolha outro número')
-    } else if (n == 0){
-        // Verifica de um valor foi selecionado
-        window.alert('Por favor, digite um valor válido')
+    if (n < 1 || n > 100 || valores.includes(n)){
+        //Verifica de o número está dentro do estabelecido ou se o valor já está no array
+        window.alert('Número inválido ou já selecionado.')
     } else {
-        let n = Number(numb.value)
         let texto = document.createElement('option')
         texto.innerText = `Valor ${n} adicionado`
         resp.appendChild(texto)
         valores.push(n)
     }
     end.innerHTML = '' // Limpa o resultado
-    numb.value = '' //Limpa o input
-    numb.focus() //Mantem o cursor no campo
-    // Melhora a experiência do usuário
+    limparInput()
 }
 
 function resultado(){
@@ -52,6 +43,11 @@ function resultado(){
             ` // .toFixed(2) => para ter somente duas casas depois da vírgula
             end.appendChild(result)
     }
+}
+
+function limparInput() {
+    numb.value = '' //Limpa o input
+    numb.focus() //Mantem o cursor no campo
 }
 
 /* OUTRAS OPÇÕES PARA CONFERIR O SELECT
