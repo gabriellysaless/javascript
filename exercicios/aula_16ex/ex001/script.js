@@ -33,15 +33,23 @@ function resultado(){
     } else {
         let maior = Math.max(...valores) // Operador spread (...) para espalhar os valores do array e encontrar o maior número.
         let menor = Math.min(...valores)
+        let soma = valores.reduce((acc, num) => acc + num, 0);
+        /*
+            .reduce (Método do array para somar todos os valores. Percorre todos os elementos do array e reduz os valores a um único resultado, aplicando uma função a cada elemento.)
+            acc => nome do acumulador
+            num => elemento atual do array sendo processado
+            faz acc + num; o valor inicial de acc é 0 (acc + num, 0)
+        */
+        let media = soma / valores.length;
 
         let result = document.createElement('p')
             result.innerHTML = `
             Ao todo temos ${valores.length} números cadastrados. <br>
             O maior número registrado foi ${maior}. <br>
             O menor número registrado foi ${menor}. <br>
-            `
-            // FALTA COLOCAR: soma de valores e média.
-
+            A soma dos valores é ${soma}.<br>
+            A média dos valores é ${media.toFixed(2)}.
+            ` // .toFixed(2) => para ter somente duas casas depois da vírgula
             end.appendChild(result)
     }
 }
