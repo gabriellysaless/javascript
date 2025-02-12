@@ -55,6 +55,10 @@ section > div#finish{
     margin-top: 8px;
 }
 
+section > div#resultado > p{
+    margin-bottom: 5px;
+}
+
 footer{
     background-color: rgba(0, 0, 0, 0.267);
     color: white;
