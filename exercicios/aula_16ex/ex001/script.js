@@ -19,7 +19,7 @@ function adicionar(){
 }
 
 function resultado(){
-    if (resp.options.length === 0) { //Confere se o select está vazio
+    if (valores.length === 0) { //Confere se o select está vazio
         window.alert('Nenhum valor foi adicionado')
     } else {
         let maior = Math.max(...valores) // Operador spread (...) para espalhar os valores do array e encontrar o maior número.
@@ -33,15 +33,13 @@ function resultado(){
         */
         let media = soma / valores.length;
 
-        let result = document.createElement('p')
-            result.innerHTML = `
-            Ao todo temos ${valores.length} números cadastrados. <br>
-            O maior número registrado foi ${maior}. <br>
-            O menor número registrado foi ${menor}. <br>
-            A soma dos valores é ${soma}.<br>
-            A média dos valores é ${media.toFixed(2)}.
-            ` // .toFixed(2) => para ter somente duas casas depois da vírgula
-            end.appendChild(result)
+        end.innerHTML = `
+            <p>Ao todo temos ${valores.length} números cadastrados.</p>
+            <p>O maior número registrado foi ${maior}.</p>
+            <p>O menor número registrado foi ${menor}.</p>
+            <p>A soma dos valores é ${soma}.</p>
+            <p>A média dos valores é ${media.toFixed(2)}.</p>
+        ` 
     }
 }
 
